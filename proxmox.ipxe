@@ -1,0 +1,9 @@
+#!ipxe
+
+dhcp
+set proxmox_version 8.2-1
+set proxmox_iso_url https://github.com/tuusuario/tu-repositorio/raw/main/proxmox-ve_${proxmox_version}.iso
+
+kernel ${proxmox_iso_url} initrd=initrd.img proxmox nodmraid
+initrd ${proxmox_iso_url}/initrd.img
+boot
